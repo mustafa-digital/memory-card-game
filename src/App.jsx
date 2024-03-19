@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './styles/reset.css';
+import './styles/style.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Game } from './components/Game';
+import { Title } from './components/Title';
+import { Logo } from './components/Logo';
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export function App() {
+  const [screen, setScreen] = useState('title');
+
+  function handleScreenChange(screen) {
+    setScreen(screen);
+  }
+
+  switch (screen) {
+    case 'title': {
+      return (
+        <>
+          <Logo />
+          <div className="title-screen-main">
+            <Title />
+            <Play handlePlayClicked={handleScreenChange} />
+          </div>
+        </>
+      );
+    }
+    case 'game': {
+      return (
+        <>
+          <Game />
+        </>
+      );
+    }
+    default: {
+      throw Error('Error! No such page exists.');
+    }
+  }
 }
 
-export default App
+function Play({ handlePlayClicked }) {
+  const [showHelp, setShowHelp] = useState(false);
+
+  return (
+    <div className="title-play-wrapper">
+      <button
+        type="button"
+        onClick={() => handlePlayClicked('game')}
+        className="play-btn"
+      >
+        Play
+      </button>
+      <button
+        type="button"
+        className="how-to-btn"
+        onClick={() => setShowHelp(true)}
+      >
+        How to Play
+      </button>
+    </div>
+  );
+}

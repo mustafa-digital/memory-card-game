@@ -1,0 +1,137 @@
+@font-face {
+  font-family: digimon-italic;
+  src: url('src/assets/fonts/pixel-digivolve-italic.ttf');
+}
+
+@font-face {
+  font-family: digimon;
+  src: url('src/assets/fonts/pixel-digivolve.ttf');
+}
+
+:root {
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url('src/assets/Images/986b40b07ff496b8ef2dffcab76192be (1).png');
+  background-size: cover;
+  padding: 50px;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  /* padding: 50px; */
+  /* display: grid;
+  justify-content: center;
+  align-items: center; */
+}
+
+.title-screen-main {
+  display: grid;
+  grid-template-rows: 300px 1fr;
+  justify-items: center;
+  align-items: center;
+  font-family: digimon;
+}
+
+.title-screen-main,
+.play-btn,
+.how-to-btn,
+.difficulty-select > button {
+  color: yellow;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+  text-align: center;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+.subheading {
+  font-size: 2rem;
+}
+
+.title-play-wrapper {
+  font-size: 2.5rem;
+  display: grid;
+}
+
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.digimon-logo {
+  height: 150px;
+}
+
+.agumon-sprite-wrapper {
+  position: absolute;
+  top: 200px;
+  left: 50px;
+}
+
+.agumon-sprite {
+  height: 100px;
+}
+
+.play-btn,
+.how-to-btn,
+.difficulty-select > button {
+  background: transparent;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+.play-btn:hover,
+.how-to-btn:hover,
+.difficulty-select > button:hover {
+  transform: scale(1.2);
+}
+
+.play-btn:focus,
+.how-to-btn:focus,
+.difficulty-select > button:focus {
+  transform: scale(1.2);
+  border: none;
+  outline: none;
+}
+
+/* .play-btn:focus::before {
+  content: ' ';
+  font-size: 0.2rem;
+  position: relative;
+  left: -10px;
+  top: -10px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #fff73b;
+  transform: rotate(0deg);
+} */
+
+.difficulty-select {
+  display: flex;
+  gap: 35px;
+}
+
+.difficulty-select > button {
+  font-size: 2.5rem;
+}
