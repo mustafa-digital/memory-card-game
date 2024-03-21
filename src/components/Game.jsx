@@ -15,15 +15,6 @@ export function Game() {
   const pageURL = '&&page=';
   const pageSizeURL = '&&pageSize=';
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (renderCardFront === false) setRenderCardFront(true);
-  //   }, 800);
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, [renderCardFront]);
-
   if (status !== 'difficulty_select') {
     const body = document.querySelector('body');
     body.style.background =
@@ -31,7 +22,7 @@ export function Game() {
   }
 
   const difficultySize = {
-    easy: '6',
+    easy: '5',
     medium: '12',
     hard: '18',
   };
@@ -105,7 +96,7 @@ export function Game() {
           { transform: 'rotateY(0deg)' },
         ];
         card.animate(animation, {
-          duration: 3000,
+          duration: 2000,
           iterations: 1,
         });
       });
@@ -114,7 +105,7 @@ export function Game() {
       setTimeout(() => {
         setDigimonList(newDigimonList);
         setSelectedCards(newSelectedCards.add(clickedId));
-      }, 2000);
+      }, 1500);
     }
   }
 

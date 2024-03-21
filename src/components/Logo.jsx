@@ -3,7 +3,7 @@ export function Logo({ showSprite = true }) {
     <>
       <div className={showSprite ? 'logo' : 'logo-game'}>
         <img
-          className="digimon-logo"
+          className={showSprite ? 'digimon-logo' : 'digimon-logo-game'}
           src="src/assets/Images/Digimon-Logo-Transparent.png"
           alt="digimon-logo"
         ></img>

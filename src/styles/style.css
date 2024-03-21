@@ -24,11 +24,13 @@ a {
 
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   background: url('src/assets/Images/986b40b07ff496b8ef2dffcab76192be (1).png');
   background-size: cover;
   padding: 50px;
   overflow-x: hidden;
+  place-items: start;
 }
 
 #root {
@@ -79,6 +81,10 @@ body {
 
 .digimon-logo {
   height: 150px;
+}
+
+.digimon-logo-game {
+  height: 100px;
 }
 
 .agumon-sprite-wrapper {
@@ -138,7 +144,7 @@ body {
 }
 
 .game-screen {
-  height: 100vh;
+  max-height: 100vh;
   max-width: 100vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -164,13 +170,16 @@ body {
   height: 100%;
   width: 100%;
   text-align: center;
-  /* transition: transform 0.8s; */
   transform-style: preserve-3d;
 }
 
-.memory-card {
-  /* transform: rotateY(180deg); */
-  /* animation: card-flip-initial 1.75s ease-in-out 0s 1 forwards normal; */
+.memory-card-container {
+  transition: transform 0.3s;
+  z-index: 1;
+}
+
+.card-tilt-container {
+  height: 400px;
 }
 
 .flip-card-initial {
@@ -188,6 +197,8 @@ body {
   width: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  display: grid;
+  justify-content: center;
 }
 
 .memory-card-back {
@@ -220,7 +231,7 @@ body {
 
 .logo-game {
   display: grid;
-  justify-content: center;
+  /* justify-content: center; */
   margin-bottom: 25px;
 }
 
