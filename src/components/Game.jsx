@@ -4,12 +4,14 @@ import { Title } from './Title';
 import { Logo } from './Logo';
 import { Difficulty } from './Difficulty';
 import { Card } from './Card';
+import { Score } from './Score';
 
 export function Game() {
   const [difficulty, setDifficulty] = useState(null);
   const [status, setStatus] = useState('difficulty_select');
   const [digimonList, setDigimonList] = useState({});
   const [selectedCards, setSelectedCards] = useState(new Set());
+  const [score, setScore] = useState(0);
 
   const baseURL = 'https://digi-api.com/api/v1/digimon?level=child';
   const pageURL = '&&page=';
@@ -102,6 +104,8 @@ export function Game() {
       });
 
       const newDigimonList = randomizeDigimonList();
+      setScore(score + 1);
+
       setTimeout(() => {
         setDigimonList(newDigimonList);
         setSelectedCards(newSelectedCards.add(clickedId));
@@ -137,6 +141,7 @@ export function Game() {
       return (
         <>
           <Logo showSprite={false} />
+          <Score currentScore={score} maxScore={difficultySize[difficulty]} />
           <div className="game-screen">
             {digimonList.map((digimon) => {
               return (
