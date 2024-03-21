@@ -22,9 +22,9 @@ export function Game() {
   }
 
   const difficultySize = {
-    easy: '5',
-    medium: '12',
-    hard: '18',
+    easy: '6',
+    medium: '9',
+    hard: '12',
   };
 
   const DIGIMON_PAGE_NUM = 20;
