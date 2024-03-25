@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './styles/reset.css';
-import './styles/style.css';
+// import './styles/reset.css';
+// import './styles/style.css';
 
 import { Game } from './components/Game';
 import { Title } from './components/Title';
