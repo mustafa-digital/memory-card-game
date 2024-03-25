@@ -28,7 +28,7 @@ export function App() {
     case 'game': {
       return (
         <>
-          <Game />
+          <Game changeScreen={handleScreenChange} />
         </>
       );
     }

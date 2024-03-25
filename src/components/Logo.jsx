@@ -1,7 +1,10 @@
-export function Logo({ showSprite = true }) {
+export function Logo({ showSprite = true, handleClick }) {
   return (
     <>
-      <div className={showSprite ? 'logo' : 'logo-game'}>
+      <div
+        className={showSprite ? 'logo' : 'logo-game'}
+        onClick={() => handleClick('title')}
+      >
         <img
           className={showSprite ? 'digimon-logo' : 'digimon-logo-game'}
           src="src/assets/Images/Digimon-Logo-Transparent.png"

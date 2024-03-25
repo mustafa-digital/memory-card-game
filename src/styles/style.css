@@ -60,9 +60,8 @@ body {
 }
 
 .title-screen-main,
-.play-btn,
-.how-to-btn,
-.difficulty-select > button {
+button {
+  font-family: digimon, sans-serif;
   color: yellow;
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 1px;
@@ -94,6 +93,8 @@ body {
 
 .digimon-logo-game {
   height: 75px;
+  position: relative;
+  top: -10px;
 }
 
 .agumon-sprite-wrapper {
@@ -106,24 +107,18 @@ body {
   height: 100px;
 }
 
-.play-btn,
-.how-to-btn,
-.difficulty-select > button {
+button {
   background: transparent;
   padding: 0px;
   margin: 0px;
   border: none;
 }
 
-.play-btn:hover,
-.how-to-btn:hover,
-.difficulty-select > button:hover {
+button:hover {
   transform: scale(1.2);
 }
 
-.play-btn:focus,
-.how-to-btn:focus,
-.difficulty-select > button:focus {
+button:focus {
   transform: scale(1.2);
   border: none;
   outline: none;
@@ -150,6 +145,10 @@ body {
 
 .difficulty-select > button {
   font-size: 2.5rem;
+}
+
+.loading-text {
+  font-size: 3rem;
 }
 
 .game-screen {
@@ -251,8 +250,10 @@ body {
 
 .logo-game {
   display: grid;
+  width: min-content;
   /* justify-content: center; */
   margin-bottom: 25px;
+  cursor: pointer;
 }
 
 .score-container {
@@ -274,6 +275,51 @@ body {
   justify-content: center;
   background: url('src/assets/Images/PlayStation - Digimon World - Title Screen JAP 2 (1) (1).png');
   background-size: contain;
+}
+
+.lose-screen {
+  width: fit-content;
+  height: auto;
+  margin: 0 auto;
+  background: #242424;
+  border-radius: 25px;
+  box-shadow: 4px 4px 4px #242424;
+  background-size: cover;
+  display: grid;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.lose-text-wrapper {
+  height: fit-content;
+  width: auto;
+  background-color: transparent;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+  background-color: #242424;
+}
+
+.lose-gif {
+  height: 400px;
+  width: 700px;
+}
+
+.digi-text {
+  font-family: digimon, sans-serif;
+  font-size: 2.5rem;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+  color: yellow;
+}
+
+.lose-btn-wrapper {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @keyframes card-flip-initial {

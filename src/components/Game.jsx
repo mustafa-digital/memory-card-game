@@ -6,7 +6,7 @@ import { Difficulty } from './Difficulty';
 import { Card } from './Card';
 import { Score } from './Score';
 
-export function Game() {
+export function Game({ changeScreen }) {
   const [difficulty, setDifficulty] = useState(null);
   const [status, setStatus] = useState('difficulty_select');
   const [digimonList, setDigimonList] = useState({});
@@ -17,10 +17,13 @@ export function Game() {
   const pageURL = '&&page=';
   const pageSizeURL = '&&pageSize=';
 
+  const body = document.querySelector('body');
   if (status !== 'difficulty_select') {
-    const body = document.querySelector('body');
     body.style.background =
       'url("src/assets/Images/digimon-tamers-2001-background-arts-v0-kyzd5wlaq9va1 (1).png")';
+  } else {
+    body.style.background =
+      'url("src/assets/Images/986b40b07ff496b8ef2dffcab76192be (1).png")';
   }
 
   const difficultySize = {
@@ -30,6 +33,12 @@ export function Game() {
   };
 
   const DIGIMON_PAGE_NUM = 20;
+
+  function resetGame() {
+    setDigimonList({});
+    setSelectedCards(new Set());
+    setScore(0);
+  }
 
   function handleDifficultySelect(difficulty) {
     setStatus('loading');
@@ -75,7 +84,6 @@ export function Game() {
       digimonListMutable.splice(randomSpot, 1);
     }
     return newDigimonList;
-    // setDigimonList(newDigimonList);
   }
 
   function handleGameTurn(e) {
@@ -132,7 +140,7 @@ export function Game() {
           <Logo />
           <div className="title-screen-main">
             <Title />
-            <h1>Loading...</h1>
+            <h1 className="loading-text">Loading...</h1>
           </div>
         </>
       );
@@ -140,7 +148,7 @@ export function Game() {
     case 'playing': {
       return (
         <>
-          <Logo showSprite={false} />
+          <Logo showSprite={false} handleClick={changeScreen} />
           <Score currentScore={score} maxScore={difficultySize[difficulty]} />
           <div className="game-screen">
             {digimonList.map((digimon) => {
@@ -159,6 +167,38 @@ export function Game() {
             })}
           </div>
         </>
+      );
+    }
+    case 'lose': {
+      return (
+        <div className="lose-screen">
+          <div className="lose-text-wrapper">
+            <h1 className="digi-text">Sorry, you lose.</h1>
+          </div>
+          <img
+            className="lose-gif"
+            src="src/assets/Images/digimon-agumon.gif"
+            alt="lose animation"
+          />
+          <div className="lose-btn-wrapper">
+            <button
+              onClick={() => {
+                resetGame();
+                setStatus('difficulty_select');
+              }}
+            >
+              Change Difficulty
+            </button>
+            <button
+              onClick={() => {
+                resetGame();
+                setStatus('loading');
+              }}
+            >
+              Retry
+            </button>
+          </div>
+        </div>
       );
     }
   }
