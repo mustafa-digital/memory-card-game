@@ -1,11 +1,11 @@
 @font-face {
   font-family: digimon-italic;
-  src: url('public/assets/fonts/pixel-digivolve-italic.ttf');
+  src: url('/assets/fonts/pixel-digivolve-italic.ttfgi');
 }
 
 @font-face {
   font-family: digimon;
-  src: url('public/assets/fonts/pixel-digivolve.ttf');
+  src: url('/assets/fonts/pixel-digivolve.ttf');
 }
 
 * {
@@ -35,7 +35,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   height: fit-content;
-  background: url('assets/Images/986b40b07ff496b8ef2dffcab76192be (1).png');
+  background: url('/assets/Images/986b40b07ff496b8ef2dffcab76192be (1).png');
   background-size: cover;
   padding: 50px;
   overflow-x: hidden;
