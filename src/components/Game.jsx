@@ -115,9 +115,6 @@ export function Game({ changeScreen }) {
       const newDigimonList = randomizeDigimonList();
       setScore(score + 1);
       const maxScore = Number(difficultySize[difficulty]);
-
-      console.log({ maxScore });
-
       if (score + 1 === maxScore) setStatus('win');
 
       setTimeout(() => {
