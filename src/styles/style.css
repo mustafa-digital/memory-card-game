@@ -1,11 +1,11 @@
 @font-face {
   font-family: digimon-italic;
-  src: url('src/assets/fonts/pixel-digivolve-italic.ttf');
+  src: url('assets/fonts/pixel-digivolve-italic.ttf');
 }
 
 @font-face {
   font-family: digimon;
-  src: url('src/assets/fonts/pixel-digivolve.ttf');
+  src: url('assets/fonts/pixel-digivolve.ttf');
 }
 
 * {
@@ -35,7 +35,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   height: fit-content;
-  background: url('src/assets/Images/986b40b07ff496b8ef2dffcab76192be (1).png');
+  background: url('assets/Images/986b40b07ff496b8ef2dffcab76192be (1).png');
   background-size: cover;
   padding: 50px;
   overflow-x: hidden;
@@ -273,7 +273,7 @@ button:focus {
   text-align: center;
   align-items: center;
   justify-content: center;
-  background: url('src/assets/Images/PlayStation - Digimon World - Title Screen JAP 2 (1) (1).png');
+  background: url('assets/Images/PlayStation - Digimon World - Title Screen JAP 2 (1) (1).png');
   background-size: contain;
 }
 
