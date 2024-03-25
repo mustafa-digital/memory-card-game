@@ -273,7 +273,7 @@ button:focus {
   text-align: center;
   align-items: center;
   justify-content: center;
-  background: url('assets/Images/PlayStation - Digimon World - Title Screen JAP 2 (1) (1).png');
+  background: url('/assets/Images/PlayStation - Digimon World - Title Screen JAP 2 (1) (1).png');
   background-size: contain;
 }
 
