@@ -15,9 +15,9 @@ export function GameOver({ status, resetGame, setStatus, changeScreen }) {
       <img
         className="game-over-gif"
         src={
-          (status === 'win' && 'src/assets/Images/digimon-adventure.gif') ||
-          (status === 'lose' && 'src/assets/Images/digimon-agumon.gif') ||
-          (status === 'error' && 'src/assets/Images/digimon-error.png')
+          (status === 'win' && 'assets/Images/digimon-adventure.gif') ||
+          (status === 'lose' && 'assets/Images/digimon-agumon.gif') ||
+          (status === 'error' && 'assets/Images/digimon-error.png')
         }
         alt={status + 'animation'}
       />

@@ -13,12 +13,12 @@ export function Card({ name, image, onClick, id, className }) {
           <div className="memory-card-back">
             <img
               className="memory-card-back-img"
-              src="src/assets/Images/de9049f6ac9d6e09357770167bd9b3400f873cc5r4-444-250_00.gif"
+              src="assets/Images/de9049f6ac9d6e09357770167bd9b3400f873cc5r4-444-250_00.gif"
               alt="back of card"
             />
             <img
               className="card-logo"
-              src="src/assets/Images/kisspng-terriermon-renamon-impmon-digimon-logo-digimon-5ac2b819c54917.9394162015227105538081.png"
+              src="assets/Images/kisspng-terriermon-renamon-impmon-digimon-logo-digimon-5ac2b819c54917.9394162015227105538081.png"
               alt="card logo image"
             />
           </div>

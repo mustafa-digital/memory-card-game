@@ -21,10 +21,10 @@ export function Game({ changeScreen }) {
   const body = document.querySelector('body');
   if (status !== 'difficulty_select') {
     body.style.background =
-      'url("src/assets/Images/digimon-tamers-2001-background-arts-v0-kyzd5wlaq9va1 (1).png")';
+      'url("assets/Images/digimon-tamers-2001-background-arts-v0-kyzd5wlaq9va1 (1).png")';
   } else {
     body.style.background =
-      'url("src/assets/Images/986b40b07ff496b8ef2dffcab76192be (1).png")';
+      'url("assets/Images/986b40b07ff496b8ef2dffcab76192be (1).png")';
   }
 
   const difficultySize = {
@@ -145,7 +145,7 @@ export function Game({ changeScreen }) {
             <Title />
             <img
               className="agumon-sprite"
-              src="src/assets/Images/tumblr_n320f2gHjd1sxws2ko1_500.gif"
+              src="assets/Images/tumblr_n320f2gHjd1sxws2ko1_500.gif"
               alt="agumon sprite walking animation"
             ></img>
             <h1 className="loading-text">Loading...</h1>
