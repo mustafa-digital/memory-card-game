@@ -64,32 +64,22 @@ function Play({ handlePlayClicked }) {
         <div className="help-container">
           <img
             style={{ height: '225px', position: 'relative', left: '30px' }}
-            src="src/assets/Images/augmon-help.png"
+            src="assets/Images/augmon-help.png"
             alt="agumon picture"
           />
           <img
             className="game-help"
-            src="src/assets/Images/pixel-speech-bubble.png"
+            src="assets/Images/pixel-speech-bubble.png"
             alt="help tip: Each turn, click a card, but don't click the same card twice!"
           />
           <img
             className="game-help-cards"
-            src="src/assets/Images/help-cards-gif.gif"
+            src="assets/Images/help-cards-gif.gif"
             alt="help card gif"
           />
           <div className="help-close-btn-wrapper">
             <button onClick={() => setShowHelp(false)}>OK</button>
           </div>
-          {/* <img
-            className="game-help-cards"
-            src="src/assets/Images/help-cards-unknown.png"
-            alt="cards face down"
-          />
-          <img
-            className="game-help-cards"
-            src="src/assets/Images/help-cards-known.png"
-            alt="revealed cards"
-          /> */}
         </div>
       )}
     </div>
