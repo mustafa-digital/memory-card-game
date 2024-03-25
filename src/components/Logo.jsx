@@ -3,7 +3,9 @@ export function Logo({ showSprite = true, handleClick }) {
     <>
       <div
         className={showSprite ? 'logo' : 'logo-game'}
-        onClick={() => handleClick('title')}
+        onClick={() => {
+          if (!showSprite) handleClick('title');
+        }}
       >
         <img
           className={showSprite ? 'digimon-logo' : 'digimon-logo-game'}
