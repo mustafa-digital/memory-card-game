@@ -1,11 +1,11 @@
 @font-face {
   font-family: digimon-italic;
-  src: url('assets/fonts/pixel-digivolve-italic.ttf');
+  src: url('./assets/fonts/pixel-digivolve-italic.ttf');
 }
 
 @font-face {
   font-family: digimon;
-  src: url('assets/fonts/pixel-digivolve.ttf');
+  src: url('./assets/fonts/pixel-digivolve.ttf');
 }
 
 * {
