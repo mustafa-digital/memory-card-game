@@ -277,7 +277,7 @@ button:focus {
   background-size: contain;
 }
 
-.lose-screen {
+.game-over-screen {
   width: fit-content;
   height: auto;
   margin: 0 auto;
@@ -292,7 +292,7 @@ button:focus {
   padding: 20px;
 }
 
-.lose-text-wrapper {
+.game-over-text-wrapper {
   height: fit-content;
   width: auto;
   background-color: transparent;
@@ -303,12 +303,12 @@ button:focus {
   background-color: #242424;
 }
 
-.lose-gif {
+.game-over-gif {
   height: 400px;
   width: 700px;
 }
 
-.digi-text {
+.game-over-text {
   font-family: digimon, sans-serif;
   font-size: 2.5rem;
   -webkit-text-stroke-color: black;
@@ -316,7 +316,7 @@ button:focus {
   color: yellow;
 }
 
-.lose-btn-wrapper {
+.game-over-btn-wrapper {
   font-size: 2rem;
   display: flex;
   justify-content: space-evenly;

@@ -5,6 +5,7 @@ import { Logo } from './Logo';
 import { Difficulty } from './Difficulty';
 import { Card } from './Card';
 import { Score } from './Score';
+import { GameOver } from './GameOver';
 
 export function Game({ changeScreen }) {
   const [difficulty, setDifficulty] = useState(null);
@@ -90,7 +91,6 @@ export function Game({ changeScreen }) {
     const clickedId = Number(e.currentTarget.parentNode.dataset.id);
     // check if this card has been clicked before
     if (selectedCards.has(clickedId)) {
-      console.log('Sorry, you lose.');
       setStatus('lose');
     } else {
       const newSelectedCards = new Set(selectedCards);
@@ -113,6 +113,11 @@ export function Game({ changeScreen }) {
 
       const newDigimonList = randomizeDigimonList();
       setScore(score + 1);
+      const maxScore = Number(difficultySize[difficulty]);
+
+      console.log({ maxScore });
+
+      if (score + 1 === maxScore) setStatus('win');
 
       setTimeout(() => {
         setDigimonList(newDigimonList);
@@ -171,34 +176,17 @@ export function Game({ changeScreen }) {
     }
     case 'lose': {
       return (
-        <div className="lose-screen">
-          <div className="lose-text-wrapper">
-            <h1 className="digi-text">Sorry, you lose.</h1>
-          </div>
-          <img
-            className="lose-gif"
-            src="src/assets/Images/digimon-agumon.gif"
-            alt="lose animation"
-          />
-          <div className="lose-btn-wrapper">
-            <button
-              onClick={() => {
-                resetGame();
-                setStatus('difficulty_select');
-              }}
-            >
-              Change Difficulty
-            </button>
-            <button
-              onClick={() => {
-                resetGame();
-                setStatus('loading');
-              }}
-            >
-              Retry
-            </button>
-          </div>
-        </div>
+        <GameOver status="lose" resetGame={resetGame} setStatus={setStatus} />
+      );
+    }
+    case 'win': {
+      return (
+        <GameOver
+          status="win"
+          resetGame={resetGame}
+          setStatus={setStatus}
+          changeScreen={changeScreen}
+        />
       );
     }
   }
