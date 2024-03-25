@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { Title } from './Title';
 import { Logo } from './Logo';
@@ -33,7 +33,7 @@ export function Game({ changeScreen }) {
     hard: '12',
   };
 
-  const DIGIMON_PAGE_NUM = 20;
+  const DIGIMON_PAGE_NUM = 15;
 
   function resetGame() {
     setDigimonList({});
@@ -51,15 +51,16 @@ export function Game({ changeScreen }) {
   }
 
   async function getDigimonData(request) {
-    const response = await fetch(request);
-
-    if (response.status === 200) {
-      // OK
-      const data = await response.json();
-      return data;
+    try {
+      const response = await fetch(request);
+      if (response.status === 200) {
+        // OK
+        const data = await response.json();
+        return data;
+      }
+    } catch (error) {
+      setStatus('error');
     }
-
-    throw new Error(response.status);
   }
 
   function loadData() {
@@ -188,6 +189,14 @@ export function Game({ changeScreen }) {
           changeScreen={changeScreen}
         />
       );
+    }
+    default: {
+      <GameOver
+        status="error"
+        resetGame={resetGame}
+        setStatus={setStatus}
+        changeScreen={changeScreen}
+      />;
     }
   }
 }
