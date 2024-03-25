@@ -146,6 +146,11 @@ export function Game({ changeScreen }) {
           <Logo />
           <div className="title-screen-main">
             <Title />
+            <img
+              className="agumon-sprite"
+              src="src/assets/Images/tumblr_n320f2gHjd1sxws2ko1_500.gif"
+              alt="agumon sprite walking animation"
+            ></img>
             <h1 className="loading-text">Loading...</h1>
           </div>
         </>

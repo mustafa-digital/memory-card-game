@@ -29,7 +29,7 @@ export function GameOver({ status, resetGame, setStatus, changeScreen }) {
               changeScreen('title');
             }}
           >
-            Continue
+            {status === 'win' ? 'Continue' : 'Back to Home'}
           </button>
         ) : (
           <>
