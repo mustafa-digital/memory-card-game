@@ -306,6 +306,7 @@ button:focus {
 .game-over-gif {
   height: 400px;
   width: 700px;
+  justify-self: center;
 }
 
 .game-over-text {

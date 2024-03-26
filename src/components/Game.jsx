@@ -51,14 +51,23 @@ export function Game({ changeScreen }) {
   }
 
   async function getDigimonData(request) {
+    let response;
+
     try {
-      const response = await fetch(request);
-      if (response.status === 200) {
+      response = await fetch(request);
+      if (response?.status === 200) {
         // OK
         const data = await response.json();
         return data;
+      } else {
+        throw new Error(`Request failed with status ${response.status}`);
       }
     } catch (error) {
+      if (error instanceof SyntaxError) {
+        console.log('There was a SyntaxError: ', error);
+      } else {
+        console.log('There was an error fetching Digimon Data: ', error);
+      }
       setStatus('error');
     }
   }
@@ -186,6 +195,16 @@ export function Game({ changeScreen }) {
       return (
         <GameOver
           status="win"
+          resetGame={resetGame}
+          setStatus={setStatus}
+          changeScreen={changeScreen}
+        />
+      );
+    }
+    case 'error': {
+      return (
+        <GameOver
+          status="error"
           resetGame={resetGame}
           setStatus={setStatus}
           changeScreen={changeScreen}
